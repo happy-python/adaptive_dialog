@@ -18,6 +18,8 @@ Future<List<String>> showTextInputDialog({
   AdaptiveStyle style = AdaptiveStyle.adaptive,
   bool useRootNavigator = true,
   VerticalDirection actionsOverflowDirection = VerticalDirection.up,
+  Color okColor = Colors.blueAccent,
+  Color cancelColor = Colors.redAccent,
 }) {
   final theme = Theme.of(context);
   return style.isCupertinoStyle(theme)
@@ -33,6 +35,8 @@ Future<List<String>> showTextInputDialog({
             isDestructiveAction: isDestructiveAction,
             style: style,
             useRootNavigator: useRootNavigator,
+            okColor: okColor,
+            cancelColor: cancelColor,
           ),
         )
       : showModal(

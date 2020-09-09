@@ -13,6 +13,8 @@ class CupertinoTextInputDialog extends StatefulWidget {
     this.isDestructiveAction = false,
     this.style = AdaptiveStyle.adaptive,
     this.useRootNavigator = true,
+    this.okColor,
+    this.cancelColor,
   });
   @override
   _CupertinoTextInputDialogState createState() =>
@@ -26,6 +28,8 @@ class CupertinoTextInputDialog extends StatefulWidget {
   final bool isDestructiveAction;
   final AdaptiveStyle style;
   final bool useRootNavigator;
+  final Color okColor;
+  final Color cancelColor;
 }
 
 class _CupertinoTextInputDialogState extends State<CupertinoTextInputDialog> {
@@ -72,9 +76,7 @@ class _CupertinoTextInputDialogState extends State<CupertinoTextInputDialog> {
     final okText = Text(
       widget.okLabel ?? MaterialLocalizations.of(context).okButtonLabel,
       style: TextStyle(
-        color: widget.isDestructiveAction
-            ? CupertinoColors.systemRed.resolveFrom(context)
-            : null,
+        color: widget.okColor,
       ),
     );
     BoxDecoration _borderDecoration({
@@ -155,6 +157,7 @@ class _CupertinoTextInputDialogState extends State<CupertinoTextInputDialog> {
                 MaterialLocalizations.of(context)
                     .cancelButtonLabel
                     .capitalizedForce,
+            style: TextStyle(color: widget.cancelColor),
           ),
           onPressed: cancel,
           isDefaultAction: true,
