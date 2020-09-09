@@ -39,7 +39,8 @@ Future<T> showAlertDialog<T>({
     );
   }
   final titleText = title == null ? null : Text(title);
-  final messageText = message == null ? null : Text(message);
+  final messageText =
+      message == null ? null : Text(message, textAlign: TextAlign.start);
   return style.isCupertinoStyle(theme)
       ? showCupertinoDialog(
           context: context,
