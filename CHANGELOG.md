@@ -1,3 +1,8 @@
+## 0.7.6
+Add `RichText` to `showOkCancelAlertDialog`
+Add `Custom OK color` to `showOkCancelAlertDialog`
+Add `Custom Cancel color` to `showOkCancelAlertDialog`
+
 ## 0.7.5
 
 - If there is enough height, `NeverScrollableScrollPhysics` will be set to `showConfirmationDialog`'s inner `ListView`

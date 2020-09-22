@@ -1,3 +1,4 @@
+import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:example/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

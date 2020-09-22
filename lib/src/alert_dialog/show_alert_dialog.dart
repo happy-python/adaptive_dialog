@@ -20,6 +20,7 @@ Future<T> showAlertDialog<T>({
   bool useRootNavigator = true,
   VerticalDirection actionsOverflowDirection = VerticalDirection.up,
   TextAlign messageAlign,
+  Widget richMessage,
 }) {
   void pop(T key) => Navigator.of(
         context,
@@ -40,8 +41,9 @@ Future<T> showAlertDialog<T>({
     );
   }
   final titleText = title == null ? null : Text(title);
-  final messageText =
-      message == null ? null : Text(message, textAlign: messageAlign);
+
+  final messageText = richMessage != null ? richMessage : (message == null ? null : Text(message, textAlign: messageAlign));
+
   return style.isCupertinoStyle(theme)
       ? showCupertinoDialog(
           context: context,

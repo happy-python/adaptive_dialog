@@ -27,6 +27,7 @@ Future<OkCancelResult> showOkCancelAlertDialog({
   Color okColor = Colors.blueAccent,
   Color cancelColor = Colors.redAccent,
   TextAlign messageAlign = TextAlign.center,
+  Widget richMessage = null,
 }) async {
   final isCupertinoStyle = Theme.of(context).isCupertinoStyle;
   String defaultCancelLabel() {
@@ -44,6 +45,7 @@ Future<OkCancelResult> showOkCancelAlertDialog({
     useRootNavigator: useRootNavigator,
     actionsOverflowDirection: actionsOverflowDirection,
     messageAlign: messageAlign,
+    richMessage: richMessage,
     actions: [
       AlertDialogAction(
           label: cancelLabel ?? defaultCancelLabel(),
